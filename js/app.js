@@ -1,23 +1,59 @@
-
-(function() {
-    var app = angular.module('store', []);
+(function () {
+    var app = angular.module('list', []);
 
     /* Controller - where we define our app's behaviour by defining functions and values */
-    app.controller('StoreController', function(){
+    app.controller('StoreController', function () {
         /* product is a property of our controller */
-        this.product = gem;
+        this.products = shoes;
 
 
     });
 
-    var gem = {
-        name: "Some gem",
-        price: 100.99,
-        description: "some gem example"
-    }
+    var shoes = [
+
+
+        {
+            name: "New Simple Pump",
+            brand: "Louboutin",
+            color: "Noir",
+            price: 795.00,
+            description: "'New Simple Pump' is a gorgeous rendition of Monsieur Louboutin's famed 'Simple Pump.' Her narrow, exposed platform gives this classic style a contemporary twist. This 120mm version in smooth black patent leather will quickly become your favorite everyday pump.",
+            link: "http://us.christianlouboutin.com/ca_en/shop/women/new-simple-pump-34925.html",
+            image: 'http://images.us.christianlouboutin.com/media/catalog/product/cache/2/zoom2_image_240x240/160x/9df78eab33525d08d6e5fb8d27136e95/c/h/christianlouboutin-newsimplepump-3080746_bk01_1_240x240.jpg'
+
+            /*
+             <!-- {{product.images[0].thumb}} -->
+            images: [
+                {
+                    full: 'http://images.us.christianlouboutin.com/media/catalog/product/cache/2/thumbnail/1200x/9df78eab33525d08d6e5fb8d27136e95/c/h/christianlouboutin-newsimplepump-3080746_bk01_1_1200x1200.jpg',
+                    thumb: 'http://images.us.christianlouboutin.com/media/catalog/product/cache/2/small_image/496x/9df78eab33525d08d6e5fb8d27136e95/c/h/christianlouboutin-simplepump-3080377_bk01_1_660x400.jpg'
+                },
+                {
+                    full: '',
+                    thumb: ''
+                }
+            ]
+            */
+        },
+
+        {
+            name: "Bianca",
+            brand: "Louboutin",
+            color: "Nude",
+            price: 875.00,
+            description: "'Bianca' has it all. Her sleek silhouette made up of a sensible platform, 140mm stiletto heel, and shallow round toe strike the perfect balance between sexy and sophisticated. A favorite among many in nude patent leather, 'Bianca' transitions seamlessly from day to evening.",
+            link: "http://us.christianlouboutin.com/ca_en/shop/women/bianca-2.html",
+            image: 'http://images.us.christianlouboutin.com/media/catalog/product/cache/2/zoom2_image_240x240/160x/9df78eab33525d08d6e5fb8d27136e95/c/h/christianlouboutin-bianca-1100024_PK20_1_240x240_2.jpg'
+        }
+
+
+    ];
 
 
 })();
+
+
+
 
 
 
