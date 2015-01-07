@@ -20,20 +20,6 @@
             description: "'New Simple Pump' is a gorgeous rendition of Monsieur Louboutin's famed 'Simple Pump.' Her narrow, exposed platform gives this classic style a contemporary twist. This 120mm version in smooth black patent leather will quickly become your favorite everyday pump.",
             link: "http://us.christianlouboutin.com/ca_en/shop/women/new-simple-pump-34925.html",
             image: 'http://images.us.christianlouboutin.com/media/catalog/product/cache/2/zoom2_image_240x240/160x/9df78eab33525d08d6e5fb8d27136e95/c/h/christianlouboutin-newsimplepump-3080746_bk01_1_240x240.jpg'
-
-            /*
-             <!-- {{product.images[0].thumb}} -->
-            images: [
-                {
-                    full: 'http://images.us.christianlouboutin.com/media/catalog/product/cache/2/thumbnail/1200x/9df78eab33525d08d6e5fb8d27136e95/c/h/christianlouboutin-newsimplepump-3080746_bk01_1_1200x1200.jpg',
-                    thumb: 'http://images.us.christianlouboutin.com/media/catalog/product/cache/2/small_image/496x/9df78eab33525d08d6e5fb8d27136e95/c/h/christianlouboutin-simplepump-3080377_bk01_1_660x400.jpg'
-                },
-                {
-                    full: '',
-                    thumb: ''
-                }
-            ]
-            */
         },
 
         {
