@@ -10,8 +10,6 @@
     });
 
     var shoes = [
-
-
         {
             name: "New Simple Pump",
             brand: "Louboutin",
@@ -23,7 +21,6 @@
             acquired: false
 
         },
-
         {
             name: "Bianca",
             brand: "Louboutin",
@@ -35,7 +32,6 @@
             acquired: false
 
         },
-
         {
             name: "Cadani",
             brand: "Aldo",
@@ -47,10 +43,50 @@
             image: 'http://media.aldoshoes.com/product/CADANI/96/CADANI_96_RG_324.JPG',
             acquired: true
         }
-
-
-
     ];
+
+    app.directive('productDescription', function () {
+
+        return {
+            restrict: 'E',
+            templateUrl: 'includes/product-description.html'
+        };
+    });
+
+    app.directive('productTitle', function() {
+
+        return {
+            restrict: 'E',
+            templateUrl: 'includes/product-title.html'
+        };
+
+    });
+
+    app.directive('productLink', function() {
+
+        return {
+            restrict: 'E',
+            templateUrl: 'includes/product-link.html'
+        };
+
+    });
+
+    app.directive('productPrice', function() {
+
+        return {
+            restrict: 'E',
+            templateUrl: 'includes/product-price.html'
+        };
+
+    });
+    app.directive('productImage', function() {
+
+        return {
+            restrict: 'E',
+            templateUrl: 'includes/product-image.html'
+        };
+
+    });
 
 
 })();

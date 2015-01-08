@@ -10,13 +10,6 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/app.css"/>
 
-    <!-- Latest compiled and minified CSS
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
- -->
-    <!-- Optional theme
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
--->
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,29 +26,23 @@
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="centered">- Shoes -</h2>
-
-
                 <ul class="list-group">
                     <!-- '-price' - will list in descending order -->
                     <li class="list-group-item" ng-repeat="product in list.products | orderBy: 'price'" ng-hide="product.acquired">
-
                         <div class="row">
                             <div class="col-lg-9 col-md-9 col-sm-9">
-                                <h3>{{product.name}}, {{product.color}}</h3>
-                                <h5><a ng-href="{{product.link}}" target="_blank">{{product.brand}}</a></h5>
-
-                                <p>{{product.description}}</p>
-                                <em>{{product.price | currency}}</em>
+                                <product-title></product-title>
+                                <product-link></product-link>
+                                <product-description></product-description>
+                                <product-price></product-price>
                             </div>
-
                             <div class="col-lg-3 col-md-3 col-sm-3">
-                                <img class="centered product-size" ng-src="{{product.image}}" />
+                                <product-image></product-image>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
-
         </div>
     </div>
 
