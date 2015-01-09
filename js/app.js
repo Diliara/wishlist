@@ -41,7 +41,7 @@
             description: "These super trendy boots will have you dancing all over town...",
             link: "http://www.aldoshoes.com/ca/en/women/boots/tall-boots/c/133/CADANI/p/33598088-96",
             image: 'http://media.aldoshoes.com/product/CADANI/96/CADANI_96_RG_324.JPG',
-            acquired: true
+            acquired: false
         }
     ];
 
@@ -84,6 +84,14 @@
         return {
             restrict: 'E',
             templateUrl: 'includes/product-image.html'
+        };
+
+    });
+    app.directive('productCheckBtn', function() {
+
+        return {
+            restrict: 'E',
+            templateUrl: 'includes/product-check-btn.html'
         };
 
     });
