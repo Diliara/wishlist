@@ -33,7 +33,7 @@
                     <!-- '-price' - will list in descending order -->
                     <li class="list-group-item" ng-repeat="product in list.products | orderBy: 'price'" ng-hide="product.acquired">
                         <div class="row">
-                            <div class="col-lg-9 col-md-9 col-sm-9">
+                            <div class="col-lg-9 col-md-9 col-sm-9" data-parseid="{{ product.objectId }}">
                                 <product-title></product-title>
                                 <product-link></product-link>
                                 <product-description></product-description>
@@ -72,6 +72,7 @@
 <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 <script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/products.js"></script>
 
 </body>
 </html>
