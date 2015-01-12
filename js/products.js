@@ -35,11 +35,11 @@
         };
 
     });
-    app.directive('productImage', function () {
+    app.directive('productPicture', function () {
 
         return {
             restrict: 'E',
-            templateUrl: 'includes/product-image.html'
+            templateUrl: 'includes/product-picture.html'
         };
 
     });
