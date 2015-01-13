@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<!-- ng-app is a directive. it run module "list" when the document loads -->
+<!DOCTYPE html><!-- ng-app is a directive. it run module "list" when the document loads -->
 <html ng-app="wishlist">
 <head>
     <meta charset="utf-8">
@@ -14,11 +13,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
 </head>
 <body class="theme-1">
@@ -28,20 +25,21 @@
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <h2 class="centered">- Shoes -</h2>
+                <!-- {{list.products[1].type}} -->
+                <h2 class="centered">- Wishlist -</h2>
                 <ul class="list-group">
-                    <!-- '-price' - will list in descending order -->
-                    <!--  data-parseid="{{ product.objectId }}"-->
+                    <!-- '-price' - will list in descending order --><!--  data-parseid="{{ product.objectId }}"-->
                     <li class="list-group-item" ng-repeat="product in list.products | orderBy: 'price'" ng-hide="product.acquired">
                         <div class="row">
-                            <div class="col-lg-9 col-md-9 col-sm-9">
+
+                            <div class="col-sm-9">
                                 <product-title></product-title>
                                 <product-link></product-link>
                                 <product-description></product-description>
                                 <product-price></product-price>
                                 <!-- <product-check-btn></product-check-btn> -->
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="col-sm-3">
                                 <product-picture></product-picture>
                             </div>
                         </div>
@@ -50,139 +48,9 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <h3 class="centered">Add a Product</h3>
 
-                <div class="panel panel-default panel-body">
+        <add-form></add-form>
 
-                    <form name="productForm">
-
-                        <div class="row">
-                            <div class="col-lg-9 col-md-9 col-sm-9">
-                                <h3>{{product.name}}, {{product.color}}</h3>
-                                <h5><a ng-href="{{product.link}}" target="_blank">{{product.brand}}</a></h5>
-
-                                <p>{{product.description}}</p>
-                                <em>{{product.price | currency}}</em>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <img ng-src="{{product.image}}" class="centered"/>
-                            </div>
-                        </div>
-
-
-                        <!--  Add a new Product Form -->
-
-                        <!--
-                        Example:
-
-                        name: "Cadani",
-                        brand: "Aldo",
-                        style: "Tall Boots",
-                        color: "Black",
-                        price: 110.00,
-                        description: "These super trendy boots will have you dancing all over town...",
-                        link: "http://www.aldoshoes.com/ca/en/women/boots/tall-boots/c/133/CADANI/p/33598088-96",
-                        image: 'http://media.aldoshoes.com/product/CADANI/96/CADANI_96_RG_324.JPG',
-                        acquired: false
-
-                        -->
-
-                        <div class="col-sm-12">
-
-                            <div class="row">
-                                <div class="form-group col-sm-6">
-                                    <label class="sr-only" for="productName">Product Name</label>
-                                    <input ng-model="product.name" type="text" class="form-control" placeholder="Name" title="Name" id="productName"/>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <input ng-model="product.brand" type="text" class="form-control" placeholder="Brand" title="Brand"/>
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-                                <div class="form-group col-sm-6">
-                                    <!-- type -->
-                                    <!-- <option value="1">Shoes</option>
-                                       <option value="2">Clothes</option>
-                                       <option value="3">Beauty</option>
-                                       <option value="4">Bedroom</option>
-                                       <option value="5">Kitchen</option>
-                                       ng-options="types for types in [shoes, clothes, beauty, bedroom, kitchen]"
-                                       -->
-                                    <select ng-model="product.category" class="form-control" title="Category">
-                                        <option value>Choose a Product Category</option>
-
-                                    </select>
-                                </div>
-
-                                <div class="col-sm-6 form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">$</div>
-                                        <input ng-model="product.price" type="number" class="form-control" placeholder="0"/>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                            <div class="form-group">
-                                <textarea ng-model="product.description" class="form-control" placeholder="Description" title="Description"></textarea>
-                            </div>
-
-
-                            <div class="form-group">
-                                <input ng-model="product.link" type="url" class="form-control" placeholder="Product Link" title="Product Link"/>
-                            </div>
-
-                            <div class="form-group">
-                                <input ng-model="product.picture" type="url" class="form-control" placeholder="Image Link" title="Image Link"/>
-                            </div>
-
-                        </div>
-                        <div class="col-xs-6">
-
-                            <!-- status - acquired or not? -->
-
-                            <div class="form-group">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">Acquired
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-6">
-
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-success pull-right" value="Submit Product"/>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-
-            </div>
-
-        </div>
-
-        <!--
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <h3>Angular Test</h3>
-
-                        <div class="panel panel-default panel-body">
-                            <p><code ng-non-bindable>{{"Angular is" + " working. Math ex: 4 + 5 ="}} {{4+5}}</code></p>
-
-                            <p>{{"Angular is" + " working. Math ex: 4 + 5 ="}} {{4+5}}</p>
-                        </div>
-
-                    </div>
-                </div>
-                -->
 
     </div>
 
@@ -192,11 +60,9 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins)
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
--->
-<!-- Latest compiled and minified JavaScript
+--><!-- Latest compiled and minified JavaScript
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
- -->
-<!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+ --><!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 <script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/products.js"></script>

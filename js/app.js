@@ -1,9 +1,9 @@
 /* top-level module attached via ng-app */
 
 (function () {
-    var app = angular.module('wishlist', ['wishlist-products']);
+    angular.module('wishlist', ['wishlist-products'])
 
-    app.controller('WishlistController', ['$http', function ($http) {
+        .controller('WishlistController', ['$http', function ($http) {
 
         var wishlist = this;
         wishlist.products = [ ];
