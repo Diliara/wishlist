@@ -8,14 +8,14 @@
 
         return {
             restrict: 'E',
-            templateUrl: 'includes/product-description.html'
+            templateUrl: 'partials/product-description.html'
         };
     });
     app.directive('productTitle', function () {
 
         return {
             restrict: 'E',
-            templateUrl: 'includes/product-title.html'
+            templateUrl: 'partials/product-title.html'
         };
 
     });
@@ -23,7 +23,7 @@
 
         return {
             restrict: 'E',
-            templateUrl: 'includes/product-link.html'
+            templateUrl: 'partials/product-link.html'
         };
 
     });
@@ -31,7 +31,7 @@
 
         return {
             restrict: 'E',
-            templateUrl: 'includes/product-price.html'
+            templateUrl: 'partials/product-price.html'
         };
 
     });
@@ -39,17 +39,34 @@
 
         return {
             restrict: 'E',
-            templateUrl: 'includes/product-picture.html'
+            templateUrl: 'partials/product-picture.html'
         };
 
     });
     app.directive('productCheckBtn', function () {
         return {
             restrict: 'E',
-            templateUrl: 'includes/product-check-btn.html'
+            templateUrl: 'partials/product-check-btn.html'
         };
 
     });
 
 
 })();
+
+/*
+Example:
+ var shoes = [
+ {
+ name: "Cadani",
+ brand: "Aldo",
+ style: "Tall Boots",
+ color: "Black",
+ price: 110.00,
+ description: "These super trendy boots will have you dancing all over town...",
+ link: "http://www.aldoshoes.com/ca/en/women/boots/tall-boots/c/133/CADANI/p/33598088-96",
+ image: 'http://media.aldoshoes.com/product/CADANI/96/CADANI_96_RG_324.JPG',
+ acquired: false
+ }
+ ];
+ */

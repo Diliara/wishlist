@@ -15,7 +15,7 @@ h5 {
     background-color: #3C3C3C;
 }
 
-.theme-1 h2 {
+.theme-1 h2, .theme-1 h3 {
     color: white;
 }
 
