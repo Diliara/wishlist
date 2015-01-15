@@ -28,11 +28,10 @@
                 <!-- {{list.products[1].type}} -->
                 <h2 class="centered">- Wishlist -</h2>
                 <ul class="list-group">
-                    <!-- '-price' - will list in descending order --><!--  data-parseid="{{ product.objectId }}"-->
-                    <li class="list-group-item" ng-repeat="product in list.products | orderBy: 'price'" ng-hide="product.acquired">
+                    <!-- '-price' - will list in descending order -->
+                    <li class="list-group-item" ng-repeat="product in list.products | orderBy: 'price'" ng-hide="product.acquired" >
                         <div class="row">
-
-                            <div class="col-sm-9">
+                            <div class="col-sm-9" data-parseid="{{ product.objectId }}">
                                 <product-title></product-title>
                                 <product-link></product-link>
                                 <product-description></product-description>
@@ -50,6 +49,7 @@
 
 
         <add-form></add-form>
+        <!-- addFormCtrl  products="list.products"-->
 
 
     </div>

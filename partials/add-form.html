@@ -22,25 +22,24 @@ acquired: false
 
         <div class="panel panel-default panel-body">
 
-            <form name="productForm">
+            <form name="addProductForm" ng-submit="addFormCtrl.addProduct(addProductForm)">
 
-                <section class="row live-preview">
+                <section class="row live-preview" ng-show="addFormCtrl.product.title">
 
 
                     <div class="col-sm-9">
-                        <h3>{{product.title}}</h3>
+                        <h3>{{addFormCtrl.product.title}}</h3>
                         <!-- <h5><a ng-href="{{product.link}}" target="_blank">{{product.brand}}</a></h5> -->
 
-                        <p>{{product.description}}</p>
-                        <em>{{product.price | currency}}</em>
+                        <p>{{addFormCtrl.product.description}}</p>
+                        <em>{{addFormCtrl.product.price | currency}}</em>
                     </div>
                     <div class="col-sm-3">
-                        <img ng-src="{{product.picture}}" class="centered"/>
+                        <img ng-src="{{addFormCtrl.product.picture}}" class="centered"/>
                     </div>
                 </section>
 
                 <hr>
-
 
                 <section class="input-container">
 
@@ -48,8 +47,8 @@ acquired: false
 
                         <div class="form-group col-sm-6 padding-0">
                             <!-- class="sr-only"  -->
-                            <label for="form-product-name">Product Name</label> <input ng-model="product.title" type="text" class="form-control"
-                                placeholder="Some product" title="Name" id="form-product-name"/>
+                            <label for="form-product-name">Product Name</label> <input ng-model="addFormCtrl.product.title" type="text"
+                                class="form-control" placeholder="Some product" title="Name" id="form-product-name"/>
                         </div>
 
                         <!--
@@ -60,12 +59,12 @@ acquired: false
 
                         <!-- type --><!--
 
-            <option value>Choose a Product Category</option>
-                   ng-options="types for types in [shoes, clothes, beauty, bedroom, kitchen]"
-                   -->
+                         <option value>Choose a Product Category</option>
+                        ng-options="types for types in [shoes, clothes, beauty, bedroom, kitchen]"
+                            -->
                         <div class="form-group col-sm-4 padding-xs-0">
-                            <label for="form-product-category">Product Category</label> <select ng-model="product.category" class="form-control"
-                                title="Category" id="form-product-category">
+                            <label for="form-product-category">Product Category</label> <select ng-model="addFormCtrl.product.category"
+                                class="form-control" title="Category" id="form-product-category">
                             <option value="1">Shoes</option>
                             <option value="2">Clothes</option>
                             <option value="3">Beauty</option>
@@ -79,7 +78,8 @@ acquired: false
 
                             <div class="input-group">
                                 <div class="input-group-addon">$</div>
-                                <input ng-model="product.price" type="number" class="form-control" placeholder="0" id="form-product-price"/>
+                                <input ng-model="addFormCtrl.product.price" type="number" class="form-control" placeholder="0"
+                                        id="form-product-price"/>
                             </div>
                         </div>
 
@@ -87,7 +87,7 @@ acquired: false
                     </div>
 
                     <div class="form-group">
-                        <label for="form-product-description">Product Description</label> <textarea ng-model="product.description"
+                        <label for="form-product-description">Product Description</label> <textarea ng-model="addFormCtrl.product.description"
                             class="form-control" placeholder="Some description..." title="Description" id="form-product-description"></textarea>
                     </div>
 
@@ -98,10 +98,9 @@ acquired: false
                     -->
 
                     <div class="form-group">
-                        <label for="form-product-picture">Product Picture Link</label> <input ng-model="product.picture" type="url"
+                        <label for="form-product-picture">Product Picture Link</label> <input ng-model="addFormCtrl.product.picture" type="url"
                             class="form-control" placeholder="http://www..." title="Picture Link" id="form-product-picture"/>
                     </div>
-
 
                     <!-- status - acquired or not? -->
 
@@ -114,12 +113,10 @@ acquired: false
                             </div>
                         </div>
                         <div class="col-xs-6 padding-0">
-                            <input type="submit" class="btn btn-success pull-right" value="Add Product"/>
+                            <input type="submit" class="btn btn-success pull-right" value="Add Product" />
                         </div>
 
                     </div>
-
-
                 </section>
             </form>
 
