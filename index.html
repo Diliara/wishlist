@@ -21,7 +21,7 @@
 <body class="theme-1">
 <div class="container">
     <!-- ng-controller directive allows us to attach our controller to this element-->
-    <div ng-controller="WishlistController as list">
+    <div ng-controller="WishlistController">
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -29,7 +29,7 @@
                 <h2 class="centered">- Wishlist -</h2>
                 <ul class="list-group">
                     <!-- '-price' - will list in descending order -->
-                    <li class="list-group-item" ng-repeat="product in list.products | orderBy: 'price'" ng-hide="product.acquired" >
+                    <li class="list-group-item" ng-repeat="product in products | orderBy: 'price'" ng-hide="product.acquired" >
                         <div class="row">
                             <div class="col-sm-9" data-parseid="{{ product.objectId }}">
                                 <product-title></product-title>
@@ -49,7 +49,6 @@
 
 
         <add-form></add-form>
-        <!-- addFormCtrl  products="list.products"-->
 
 
     </div>

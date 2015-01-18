@@ -65,17 +65,20 @@
 
                     this.addProduct = function (form) {
 
-                        /*
-                         form.$setPristine();
-                         products.push(this.product);
-                         this.product = {};
-                         */
+                        form.$setPristine();
+                        this.product = {};
+
+
+                        console.log("this.product" + this.product);
+                         /*products.push(this.product);*/
+
+
                     }
                 },
 
                 controllerAs: 'addFormCtrl',
                 scope: {
-                    products: '='
+                    /* products: '=' */
                 }
             };
 

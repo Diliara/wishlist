@@ -4,9 +4,6 @@
     angular.module('wishlist', ['wishlist-products'])
         .controller('WishlistController', ['$scope', '$http', function ($scope, $http) {
 
-            $scope = this;
-            $scope.products = [];
-
             $http.get('http://wishlist.diliaranasirova.com/product.php')
                 .success(function (data) {
                     $scope.products = data;
