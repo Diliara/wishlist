@@ -1,5 +1,5 @@
-<!DOCTYPE html><!-- ng-app is a directive. it run module "list" when the document loads -->
-<html ng-app="wishlist">
+<!DOCTYPE html>
+<html ng-app="app">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,52 +19,129 @@
 
 </head>
 <body class="theme-1">
-<div class="container">
-    <!-- ng-controller directive allows us to attach our controller to this element-->
-    <div ng-controller="WishlistController">
+    <div class="container">
+        <!-- ng-controller directive allows us to attach our controller to this element-->
+        <div ng-controller="WishlistController">
 
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <!-- {{list.products[1].type}} -->
-                <h2 class="centered">- Wishlist -</h2>
-                <ul class="list-group">
-                    <!-- '-price' - will list in descending order -->
-                    <li class="list-group-item" ng-repeat="product in products | orderBy: 'price'" ng-hide="product.acquired" >
-                        <div class="row">
-                            <div class="col-sm-9" data-parseid="{{ product.objectId }}">
-                                <product-title></product-title>
-                                <product-link></product-link>
-                                <product-description></product-description>
-                                <product-price></product-price>
-                                <!-- <product-check-btn></product-check-btn> -->
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- {{list.products[1].type}} -->
+                    <h2 class="centered">- Wishlist -</h2>
+                    <ul class="list-group">
+                        <!-- '-price' - will list in descending order -->
+                        <li class="list-group-item" ng-repeat="product in products | orderBy: 'price'" ng-hide="product.acquired" >
+                            <div class="row">
+                                <div class="col-sm-9" data-parseid="{{ product.objectId }}">
+                                    <h3>{{ product.name }}</h3>
+                                    <h5><a href="{{product.link}}" target="_blank">{{product.brand}}</a></h5>
+                                    <p>{{ product.description }}</p>
+                                    <em>{{product.price | currency}}</em>
+                                </div>
+                                <div class="col-sm-3">
+                                    <img class="centered product-size" ng-src="{{ product.picture }}" />
+                                </div>
                             </div>
-                            <div class="col-sm-3">
-                                <product-picture></product-picture>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--  Add a new Product Form -->
+
+            <!--
+            Product example:
+
+            name: "Cadani",
+            brand: "Aldo",
+            style: "Tall Boots",
+            color: "Black",
+            price: 110.00,
+            description: "These super trendy boots will have you dancing all over town...",
+            link: "http://www.aldoshoes.com/ca/en/women/boots/tall-boots/c/133/CADANI/p/33598088-96",
+            image: 'http://media.aldoshoes.com/product/CADANI/96/CADANI_96_RG_324.JPG',
+            acquired: false
+
+            -->
+
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h4>Add a Product</h4>
+
+                    <div class="panel panel-default panel-body">
+
+                        <form name="addProductForm">
+                            <section class="input-container">
+
+                                <div class="col-sm-12 padding-0">
+
+                                    <div class="form-group col-sm-6 padding-0">
+                                        <!-- class="sr-only"  -->
+                                        <label for="form-product-name">Product Name</label> <input ng-model="newProduct.name" type="text"
+                                            class="form-control" placeholder="Some product" title="Name" id="form-product-name"/>
+                                    </div>
+
+                                    <div class="form-group col-sm-4 padding-xs-0">
+                                        <label for="form-product-category">Product Category</label> <select ng-model="newProduct.type"
+                                            class="form-control" title="Category" id="form-product-category">
+                                        <option value="Shoes">Shoes</option>
+                                        <option value="Clothes">Clothes</option>
+                                        <option value="Beauty">Beauty</option>
+                                        <option value="Bedroom">Bedroom</option>
+                                        <option value="Kitchen">Kitchen</option>
+                                    </select>
+                                    </div>
+
+                                    <div class="form-group col-sm-2 padding-0">
+                                        <label for="form-product-price">Product Price</label>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">$</div>
+                                            <input ng-model="newProduct.price" type="number" class="form-control" placeholder="0"
+                                                    id="form-product-price"/>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="form-product-description">Product Description</label> <textarea ng-model="newProduct.description"
+                                        class="form-control" placeholder="Some description..." title="Description" id="form-product-description"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="form-product-picture">Product Picture Link</label> <input ng-model="newProduct.picture" type="url"
+                                        class="form-control" placeholder="http://www..." title="Picture Link" id="form-product-picture"/>
+                                </div>
+
+                                <!-- status - acquired or not? -->
+
+                                <div class="form-group">
+                                    <div class="col-xs-6 padding-0">
+                                        <!-- <label for="form-product-status">Product Status</label>-->
+
+                                        <div class="checkbox" id="form-product-status">
+                                            <label> <input type="checkbox">Acquired </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 padding-0">
+                                        <input type="submit" class="btn btn-success pull-right" value="Add Product" ng-click="add()"/>
+                                    </div>
+
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-        <add-form></add-form>
-
-
     </div>
 
-
-</div>
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins)
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
---><!-- Latest compiled and minified JavaScript
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
- --><!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
-<script type="text/javascript" src="js/angular.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/products.js"></script>
-
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/restangular/1.4.0/restangular.min.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 </html>

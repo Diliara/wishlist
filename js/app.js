@@ -1,72 +1,30 @@
-/* top-level module attached via ng-app */
+var app = angular.module('app', ["restangular"]);
 
-(function () {
-    angular.module('wishlist', ['wishlist-products'])
-        .controller('WishlistController', ['$scope', '$http', function ($scope, $http) {
+app.config([
+    'RestangularProvider', function(RestangularProvider) {
+        RestangularProvider.setRestangularFields({
+            id: "objectId"
+        });
+    }
+]);
 
-            $http.get('http://wishlist.diliaranasirova.com/product.php')
-                .success(function (data) {
-                    $scope.products = data;
-                });
-        }]);
+app.controller('WishlistController', ["Restangular", "$scope", function(Restangular, $scope) {
+    Restangular.setBaseUrl('http://wishlist.diliaranasirova.com/');
+    var resources = Restangular.all('product.php');
+    resources.getList().then(function(products) {
+        $scope.products = products;
+    });
 
-})();
+    $scope.add = function() {
+        resources.post($scope.newProduct).then(function(newResource) {
+            $scope.products.push(newResource);
+        });
+    };
 
-/*
-/* working without scope:
+    $scope.patch = function () {
+        resources.patch($scope.updateProduct).then(function(updatedProduct) {
+            // some how remove updateProduct and replace with updatedProduct
+        });
+    };
 
- (function () {
- angular.module('wishlist', ['wishlist-products'])
-
- .controller('WishlistController', ['$http', function ($http) {
- var wishlist = this;
- wishlist.products = [ ];
-
- $http.get('http://wishlist.diliaranasirova.com/product.php')
- .success(function (data) {
- wishlist.products = data;
- });
- }]);
-
- })();
-
-
-
-
- (function () {
- angular.module('wishlist', ['wishlist-products'])
- .controller('WishlistController', ['$scope','$http', function ($scope, $http) {
- $http.get('http://wishlist.diliaranasirova.com/product.php')
- .success(function (data) {
- $scope.products = data;
- });
-
- }]);
- })();
-
-
- function Hello($scope, $http) {
- $http.get('http://rest-service.guides.spring.io/greeting').
- success(function(data) {
- $scope.greeting = data;
- });
- }
-
-
- app.controller('InstantSearchController', ['$scope', '$http', function($scope, $http) {
- $http.get('inc/api.php').success(function(itemData) {
- $scope.items = itemData;
- });
- }]);
- */
-
-
-
-
-
-
-
-
-
-
-
+}]);
