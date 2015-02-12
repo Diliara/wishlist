@@ -64,11 +64,18 @@ h5 {
     color: #990000 !important;
 }
 
+.main {
+    padding-top: 75px;
+}
+
+
 @media (max-width: 768px) {
     .padding-xs-0 {
         padding: 0;
     }
 
 }
+
+
 
 

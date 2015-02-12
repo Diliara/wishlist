@@ -44,3 +44,20 @@ app.controller('WishlistController', ["Restangular", "$scope", function (Restang
     };
 
 }]);
+
+app.directive('addForm', function () {
+
+    return {
+        restrict: 'E',
+        templateUrl: 'partials/add-form.html',
+        controller: function(){
+            this.showForm = false;
+        },
+        controllerAs: 'addFormController'
+
+     };
+
+
+
+
+});
