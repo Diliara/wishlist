@@ -55,13 +55,13 @@
                     <div class="row">
                         <div class="col-sm-9" data-parseid="{{ product.objectId }}">
                             <h3>{{ product.name }}</h3>
-                            <h5><a ng-class="{noLink: product.link == (null)}" ng-href="http://{{product.link}}" target="_blank">{{product.brand}}</a></h5>
+                            <h5><a ng-class="{noLink: product.link == (null)}" ng-href="{{product.link}}" target="_blank">{{product.brand}}</a></h5>
 
                             <p>{{ product.description }}</p>
                             <em>{{product.price | currency}}</em>
                         </div>
                         <div class="col-sm-3">
-                            <img class="centered product-size" ng-src="http://{{product.picture }}"/>
+                            <img class="centered product-size" ng-src="{{product.picture }}"/>
                         </div>
                     </div>
                 </li>
