@@ -16,11 +16,7 @@ wishlistApp.directive('searchForm', function () {
 
     return {
         restrict: 'E',
-        templateUrl: 'partials/search-form.html',
-        controller: function(){
-            this.showSearchForm = false;
-        },
-        controllerAs: 'searchFormController'
+        templateUrl: 'partials/search-form.html'
     };
 
 });
