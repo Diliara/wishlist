@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                            class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Wishlist</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#top"
+                                ng-click="searchFormController.showSearchForm = !searchFormController.showSearchForm">{{searchFormController.showSearchForm ?
+                            "Hide Search"
+                            : "Search"}}</a></li>
+                        <li><a href="#top" ng-click="addFormController.showForm = !addFormController.showForm">{{addFormController.showForm ? "Cancel"
+                            : "Add Product"}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

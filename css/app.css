@@ -42,6 +42,9 @@ h5 {
     padding: 0;
 }
 
+.padding-right {
+    padding-right: 2em;
+}
 .noLink {
     color: #000000;
     cursor: text;
