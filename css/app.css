@@ -11,12 +11,29 @@ h5 {
     margin-right: auto;
 }
 
-.theme-1 {
+.product-place {
+    display: block;
+    float: left;
+     margin-top: -10px;
+}
+
+.product-desc-place {
+    margin-top: -40px;
+}
+
+.show-hide {
+    display: none;
+}
+body {
     background-color: #3C3C3C;
 }
 
-.theme-1 h2, .theme-1 h4 {
+h2 {
     color: white;
+}
+
+h4 {
+    color: rgba(102, 102, 102, 0.9)
 }
 
 .product-size {
@@ -45,6 +62,7 @@ h5 {
 .padding-right {
     padding-right: 2em;
 }
+
 .noLink {
     color: #000000;
     cursor: text;
@@ -62,19 +80,35 @@ h5 {
     padding-right: 0;
 }
 
-
 .test {
     color: #990000 !important;
 }
 
 .main {
-    padding-top: 75px;
+    padding-top: 25px;
 }
 
-
-.edit {
-    float: right;
+.btn-edit, .btn-save, .btn-cancel, .btn-delete  {
     cursor: pointer;
+    font-size: 18px;
+    width: 45px;
+
+}
+
+.btns-custom {
+    z-index: 9999;
+    float: right;
+}
+
+.btn-edit {
+    float: right;
+}
+
+.btn-save, .btn-cancel, .btn-delete {
+  }
+
+.edit-form {
+    margin-top: 50px;
 }
 
 @media (max-width: 768px) {

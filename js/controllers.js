@@ -29,11 +29,6 @@ wishlistApp.controller('WishlistController', ["Restangular", "$scope", function 
             $(this).toggle();
         });
 
-        /*
-         for(var i = 0; i < childNodes.length; i++) {
-         $(childNodes[i]).toggle();
-         }
-         */
     };
 
     $scope.patch = function (parseid) {
@@ -46,7 +41,7 @@ wishlistApp.controller('WishlistController', ["Restangular", "$scope", function 
 
     //DELETE
     $scope.deleteObject = function (productName, parseid) {
-        if (window.confirm("Are you sure you wanna delete " + productName + "?")) {
+        if (window.confirm("Are you sure you wanna DELETE the " + productName + "?")) {
             $scope.products.forEach(function (product) {
                 if (parseid == product.objectId) {
                     product.remove().then(function () {

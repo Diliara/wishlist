@@ -18,49 +18,67 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
 </head>
-<body class="theme-1" ng-controller="WishlistController">
+<body ng-controller="WishlistController">
 
-<nav-bar></nav-bar>
+<!--<nav-bar></nav-bar>-->
 
 <div class="container main">
-
-
-    <add-form ng-show="addFormController.showForm"></add-form>
-
-    <search-form></search-form>
-
     <!-- <a ng-class="{noLink: product.link == (null)}" ng-href="{{product.link}}" target="_blank"> -->
 
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-5 col-md-push-7">
+            <add-form></add-form>
+            <search-form></search-form>
+        </div>
+
+        <div class="col-md-7 col-md-pull-5">
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="product in products | filter:query | orderBy: productOrder:direction"
                         ng-hide="product.acquired">
                     <div class="row" data-parseid="{{ product.objectId }}" id="{{ product.objectId }}">
 
-                        <div class="col-sm-12" style="display:none;">
-                             <span class="edit">
-                            <a ng-click="patch(product.objectId)">Save</a> /
-                            <a ng-click="cancelEdit()">Cancel</a> /
-                            <a ng-click="deleteObject(product.name, product.objectId)">Delete</a>
-                            </span>
+                        <div class="col-sm-12 show-hide">
+                            <div class="btn-group btns-custom" role="group">
+                                <button type="button" class="btn btn-success btn-save" ng-click="patch(product.objectId)" title="Save">
+                                    <span class="glyphicon glyphicon-ok centered " aria-hidden="true"></span></button>
+                                <button type="button" class="btn btn-info btn-cancel" ng-click="cancelEdit()" title="Cancel">
+                                    <span
+                                        class="glyphicon glyphicon-remove centered" aria-hidden="true"></span></button>
+                                <button type="button" class="btn btn-danger btn-delete" ng-click="deleteObject(product.name, product.objectId)"
+                                        title="Delete">
+                                    <span
+                                        class="glyphicon glyphicon-trash centered" aria-hidden="true"></span></button>
+                            </div>
                         </div>
-                        <div class="col-sm-9" style="display:none;">
+                        <form class="show-hide edit-form">
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" ng-model="product.name" title="Name"/></div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" ng-model="product.brand" title="Brand"/></div>
+                                <div class="form-group">
+                                    <textarea ng-model="product.description" class="form-control" title="Comments"></textarea></div>
+                                <div class="input-group">
+                                    <div class="input-group-addon">$</div>
+                                    <input class="form-control" type="number" ng-model="product.price" min="0" title="Price"/>
+                                </div>
 
-                            <input type="text" ng-model="product.name" title="Name"/><br> <input type="text" ng-model="product.brand"
-                                title="Brand"/><br> <textarea ng-model="product.description" class="form-control"></textarea><br> <input type="text"
-                                ng-model="product.price"/>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <input class="form-control" type="url" ng-model="product.picture" title="Image URL"/>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <div class="col-sm-12 btns-custom">
+                            <button type="button" class="btn btn-default btn-edit" ng-click="toggleEditor(product.objectId)" title="Edit">
+                                <span
+                                    class="glyphicon glyphicon-pencil centered " aria-hidden="true"></span></button>
                         </div>
-                        <div class="col-sm-3" style="display:none;">
-                           <input type="url" ng-model="product.picture"/>
 
-                        </div>
-
-
-                        <div class="col-sm-12">
-                            <span class="edit"><a ng-click="toggleEditor(product.objectId)">Edit</a></span>
-                        </div>
-                        <div class="col-sm-9">
+                        <div class="col-sm-7 product-desc-place">
 
                             <h3>{{ product.name }}</h3>
 
@@ -69,13 +87,15 @@
                             <p>{{ product.description }}</p>
                             <em>{{product.price | currency}}</em>
                         </div>
-                        <div class="col-sm-3">
-                            <img class="centered product-size" ng-src="{{product.picture }}"/>
+                        <div class="col-sm-5">
+                            <img class="product-place product-size" ng-src="{{product.picture }}"/>
                         </div>
+
                     </div>
                 </li>
             </ul>
         </div>
+
     </div>
 
 

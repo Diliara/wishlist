@@ -1,25 +1,15 @@
 <!-- search Form -->
-<div class="row">
-    <div class="col-md-10 col-md-offset-1">
+<section>
+    <div class="panel panel-default panel-body">
+
         <h4>Search the Wishlist</h4>
 
-        <div class="panel panel-default panel-body">
+        <form>
 
-            <!-- Testing Angular Data Binding: templating and form elements to data
-            <label>Type any text here to test Angular</label>
-            <input type="text" ng-model="test" class="form-control">
-            <h3>{{ test }}</h3> -->
+            <label>Search for:</label> <input class="form-control" type="text" ng-model="query" placeholder="Anything.." autofocus> <br>
 
-
-            <form>
-
-                <label>Search for:</label>
-                    <input class="form-control" type="text" ng-model="query" placeholder="Anything.." autofocus> <br>
-
-                <label class="padding-right">Sort by:
-                <!-- Can use ng-init to initialize the order here as well. Currently initialized in the controller -->
-                <!--ng-init="productOrder='price'"-->
-                <select style="width: 100%" ng-model="productOrder">
+            <label class="padding-right">Sort by:
+                 <select style="width: 100%" ng-model="productOrder">
                     <option value="price" selected>Price</option>
                     <option value="name">Name</option>
 
@@ -30,14 +20,11 @@
 
                 </select> </label>
 
-                <label class="padding-right">
-                    <input type="radio" ng-model="direction" name="price" checked> ascending </label>
+            <label class="padding-right"> <input type="radio" ng-model="direction" name="price" checked> ascending </label>
 
 
-                <label class="padding-right">
-                    <input type="radio" ng-model="direction" name="price" value="reverse"> descending </label>
+            <label class="padding-right"> <input type="radio" ng-model="direction" name="price" value="reverse"> descending </label>
 
-            </form>
-        </div>
+        </form>
     </div>
-</div>
+</section>
