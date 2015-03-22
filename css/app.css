@@ -111,10 +111,24 @@ h4 {
     margin-top: 50px;
 }
 
+.linkedProducts {
+    display: block;
+}
+.linkedProducts a {
+    color: #111;
+}
+
+.list-group-item:hover{
+    background-color: rgba(252, 255, 255, 1);
+}
 
 @media (max-width: 768px) {
     .padding-xs-0 {
         padding: 0;
+    }
+
+    .padding-xs-top {
+        margin-top: 15px;
     }
 
     .product-desc-place {
