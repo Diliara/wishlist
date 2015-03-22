@@ -111,12 +111,27 @@ h4 {
     margin-top: 50px;
 }
 
+
 @media (max-width: 768px) {
     .padding-xs-0 {
         padding: 0;
     }
 
+    .product-desc-place {
+        margin-top: 0;
+    }
+
+    .product-place {
+        display: block;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+
+
 }
+
 
 
 
