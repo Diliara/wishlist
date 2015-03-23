@@ -1,4 +1,17 @@
-wishlistApp.controller('WishlistController', ["Restangular", "$scope", function (Restangular, $scope) {
+var wishlistControllers = angular.module('wishlistControllers', ["restangular"]);
+
+
+wishlistControllers.config([
+    'RestangularProvider', function (RestangularProvider) {
+        RestangularProvider.setRestangularFields({
+            id: "objectId"
+        });
+    }
+]);
+
+
+
+wishlistControllers.controller('ListController', ["Restangular", "$scope", function (Restangular, $scope) {
     Restangular.setBaseUrl('http://wishlist.diliaranasirova.com/');
     var resources = Restangular.all('product.php');
     resources.getList().then(function (products) {
