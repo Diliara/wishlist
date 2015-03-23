@@ -14,7 +14,7 @@ h5 {
 .product-place {
     display: block;
     float: left;
-     margin-top: -10px;
+    margin-top: -10px;
 }
 
 .product-desc-place {
@@ -24,6 +24,7 @@ h5 {
 .show-hide {
     display: none;
 }
+
 body {
     background-color: #3C3C3C;
 }
@@ -59,8 +60,8 @@ h4 {
     padding: 0;
 }
 
-.padding-right {
-    padding-right: 2em;
+.search-space {
+    padding-right: 10px;
 }
 
 .noLink {
@@ -88,7 +89,7 @@ h4 {
     padding-top: 25px;
 }
 
-.btn-edit, .btn-save, .btn-cancel, .btn-delete  {
+.btn-edit, .btn-save, .btn-cancel, .btn-delete {
     cursor: pointer;
     font-size: 18px;
     width: 45px;
@@ -105,7 +106,8 @@ h4 {
 }
 
 .btn-save, .btn-cancel, .btn-delete {
-  }
+    margin-right: 10px;
+}
 
 .edit-form {
     margin-top: 50px;
@@ -114,11 +116,12 @@ h4 {
 .linkedProducts {
     display: block;
 }
+
 .linkedProducts a {
     color: #111;
 }
 
-.list-group-item:hover{
+.list-group-item:hover {
     background-color: rgba(252, 255, 255, 1);
 }
 
@@ -142,7 +145,6 @@ h4 {
         margin-right: auto;
         float: none;
     }
-
 
 }
 

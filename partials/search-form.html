@@ -8,7 +8,7 @@
 
             <label>Search for:</label> <input class="form-control" type="text" ng-model="query" placeholder="Anything.." autofocus> <br>
 
-            <label class="padding-right">Sort by:
+            <label class="search-space">Sort by:
                  <select style="width: 100%" ng-model="productOrder">
                     <option value="price" selected>Price</option>
                     <option value="name">Name</option>
@@ -20,10 +20,10 @@
 
                 </select> </label>
 
-            <label class="padding-right"> <input type="radio" ng-model="direction" name="price" checked> ascending </label>
+            <label class="search-space"> <input type="radio" ng-model="direction" name="price" checked> Asc.</label>
 
 
-            <label class="padding-right"> <input type="radio" ng-model="direction" name="price" value="reverse"> descending </label>
+            <label class="search-space"> <input type="radio" ng-model="direction" name="price" value="reverse"> Desc.</label>
 
         </form>
     </div>

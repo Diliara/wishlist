@@ -18,12 +18,10 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
 </head>
+
 <body ng-controller="WishlistController">
 
-<!--<nav-bar></nav-bar>-->
-
 <div class="container main">
-    <!-- <a ng-class="{noLink: product.link == (null)}" ng-href="{{product.link}}" target="_blank"> -->
 
     <div class="row">
         <div class="col-md-4 col-md-push-8">
@@ -38,7 +36,7 @@
                     <div class="row" data-parseid="{{ product.objectId }}" id="{{ product.objectId }}">
 
                         <div class="col-sm-12 show-hide">
-                            <div class="btn-group btns-custom" role="group">
+                            <div class="btns-custom">
                                 <button type="button" class="btn btn-success btn-save" ng-click="patch(product.objectId)" title="Save">
                                     <span class="glyphicon glyphicon-ok centered " aria-hidden="true"></span></button>
                                 <button type="button" class="btn btn-info btn-cancel" ng-click="cancelEdit()" title="Cancel">
