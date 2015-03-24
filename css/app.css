@@ -1,29 +1,4 @@
-h5 {
-    font-style: italic;
-}
-
-.centered {
-    text-align: center;
-
-    /* for images */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.product-place {
-    display: block;
-    float: left;
-    margin-top: -10px;
-}
-
-.product-desc-place {
-    margin-top: -40px;
-}
-
-.show-hide {
-    display: none;
-}
+/*  ********************************************  ******************************************** */
 
 body {
     background-color: #3C3C3C;
@@ -37,23 +12,39 @@ h4 {
     color: rgba(102, 102, 102, 0.9)
 }
 
+h5 {
+    font-style: italic;
+}
+
+.main {
+    padding-top: 25px;
+}
+
+.centered {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-place {
+    display: block;
+    margin-top: -10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-desc-place {
+    margin-top: -40px;
+}
+
+.show-hide {
+    display: none;
+}
+
 .product-size {
     max-height: 160px;
     max-width: 160px;
-}
-
-.live-preview {
-    border: 1px solid rgba(156, 156, 156, 0.38);
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    /*
-
-   border-style: dashed;
-   border-color: rgba(142, 245, 255, 0.65) !important;
-   background: rgba(209, 248, 255, 0.24) !important;
-   padding: 3px;
-   */
 }
 
 .padding-0 {
@@ -72,28 +63,20 @@ h4 {
 }
 
 .noLink:hover, .noLink:visited {
-    cursor: not-allowed; /*text*/
+    cursor: not-allowed;
     text-decoration: none;
-
 }
 
 .padding-right-0 {
     padding-right: 0;
 }
 
-.test {
-    color: #990000 !important;
-}
-
-.main {
-    padding-top: 25px;
-}
+/* ******************************************** Buttons ******************************************** */
 
 .btn-edit, .btn-save, .btn-cancel, .btn-delete {
     cursor: pointer;
     font-size: 18px;
     width: 45px;
-
 }
 
 .btns-custom {
@@ -108,6 +91,8 @@ h4 {
 .btn-save, .btn-cancel, .btn-delete {
     margin-right: 10px;
 }
+
+/*  ********************************************  ******************************************** */
 
 .edit-form {
     margin-top: 50px;
@@ -125,6 +110,8 @@ h4 {
     background-color: rgba(252, 255, 255, 1);
 }
 
+/*  ********************************************  ******************************************** */
+
 @media (max-width: 768px) {
     .padding-xs-0 {
         padding: 0;
@@ -139,11 +126,7 @@ h4 {
     }
 
     .product-place {
-        display: block;
         margin-top: 0;
-        margin-left: auto;
-        margin-right: auto;
-        float: none;
     }
 
 }
